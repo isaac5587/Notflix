@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        Notflix
+    </title>
+    <link rel="stylesheet" href="CSS/movieSelection.css" />
+</head>
+
+<body>
+    <!--Navigation-->
+    <nav>
+        <!--logo-->
+        <a href="/" class="logo">
+            <img src="img/notflixLogo.png" />
+        </a>
+        <!--Menu Button -->
+        <input type="checkbox" class="menu-btn" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn">
+            <span class="nav-icon"></span>
+        </label>
+        <!--menu-------------->
+        <ul class="menu">
+            <li><a href="/movieSelection">Home</a></li>
+            <li><a href="/Action">Action</a></li>
+            <li><a href="/Comedy">Comedy</a></li>
+            <li><a href="/Horror">Horror</a></li>
+            <li><a href="/Drama">Drama</a></li>
+            <li><a href="/Anime">Anime</a></li>
+        </ul>
+        <!--Navigation search------------->
+        <form name="frmSearch" method="POST" class="form-inline mt-2 mt-md-0">
+            <input name="txtSearch" class="form-control mr-sm-2" type="text" placeholder="Titles, Director, Genres"
+                aria-label="Search">
+            <button name="search" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav>
+    <section id="main">
+        <!--Movie Layout-->
+        <div class="movies-heading">
+            <h1>Movie Selection</h1>
+        </div>
+        <section id="movies-list">
+            <!--Movie Cards---->
+            <% movies.forEach(function(movie)  { %>
+            <div class="movies-box">
+                <!-- Movie Images-->
+                <div class="movies-img">
+                    <img src="<%= movie.movieImage %>">
+                </div>
+                <!--Movie Titles----->
+                <p class="card-text"></p>
+                <a href="/movieDescription/<%= movie.MovieID %>">
+                    <%= movie.MovieName %>
+                </a>
+            </div>
+            <% }); %>
+            <% if(typeof search != 'undefined' && search==true) { %>
+            <a href="/movieSelection" class="btn btn-rounded"> Clear Results </a>
+            <% } %>
+        </section>
+        <!--footer------------------>
+        <footer>
+            <p>Copyright Notflix © 2020</p>
+        </footer>
+</body>
+
+</html>

@@ -1,4 +1,4 @@
-# Notflix Project ✅
+# "Notflix" Project ✅
 
 Designed and built a Netflix inspired website using JavaScript, HTML, CSS, and SQL. 
 Learned significance of how to create and integrate databases into developed websites.
